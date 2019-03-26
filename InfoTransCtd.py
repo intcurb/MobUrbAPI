@@ -127,10 +127,7 @@ class Simulation(Resource):
     
     def get(self):
         try:
-            print("entrou")
             fileName = request.args.get("fileName")
-            print(fileName)
-            print("depois")
             return send_file('sumoFiles/' + fileName, attachment_filename='teste.zip')
         except Exception as e:
             return str(e)
