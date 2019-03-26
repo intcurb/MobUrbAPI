@@ -84,9 +84,6 @@ class Simulation(Resource):
 
         radius = 10
 
-        with open('JSON_SUMO.json') as f:
-            data = json.load(f)
-
         data = request.json["jsonList"]
 
         i = 1

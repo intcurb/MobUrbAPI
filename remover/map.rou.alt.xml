@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Mar 14 11:12:35 2019 by SUMO duarouter Version 0.32.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="map.net.xml"/>
+        <route-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="map.rou.xml"/>
+        <alternatives-output value="map.rou.alt.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="0" depart="0.00">
+        <routeDistribution last="0">
+            <route cost="428.30" probability="1.00000000" edges="209176698#0 -209176698#0 -430786875 -430786877 -430786876 -430786878#2 -430786878#1 -430786878#0 430369398#0 430369391 -430369389 430369392#1 430369400#4 430369400#0 430369394 430369393 326462841#0 326462841#1 165994251#6 165994251#7 165994251#0 165993464#0 165993464#1 165993464#2 165993464#3 165993464#4 165993464#5 165993464#6 165993464#7 165993464#8 165993464#9 165993464#10 165993464#11 165993464#12 165993464#13 165993464#14 165993464#15 165993464#16 165993464#17 165993464#18 165993464#19 430663382 430663394 326458635 437859832#0 437859832#1 -618831275#24 618839160#0 618839160#1 618839160#2 618839160#3 -618839161"/>
+        </routeDistribution>
+    </vehicle>
+</routes>

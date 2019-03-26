@@ -1,0 +1,16 @@
+Loading net... done.
+Loading additional file 'map.poly.xml' ... done.
+Skipped until: 0.00
+Edge '165993901#1' not connected to edge '165994025#2' for vehicle '1'.
+Edge '165994744' not connected to edge '326518713' for vehicle '1'.
+Edge '326518713' not connected to edge '430759798#4' for vehicle '1'.
+Edge '430759798#4' not connected to edge '326518705' for vehicle '1'.
+Edge '326518705' not connected to edge '326555069' for vehicle '1'.
+Edge '430383452#3' not connected to edge '430383452#0' for vehicle '1'.
+Edge '326555023' not connected to edge '-326518714#0' for vehicle '1'.
+Edge '-326518714#0' not connected to edge '-326518714#1' for vehicle '1'.
+Edge '-326518714#1' not connected to edge '165993552#3' for vehicle '1'.
+Warning: Repaired route of vehicle '1'.
+Routes found between time steps 0.00 and 0.00.
+DijkstraRouter answered 9 queries and explored 16.11 edges on average.
+DijkstraRouter spent 0ms answering queries (0.00ms on average).
