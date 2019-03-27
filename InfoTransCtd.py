@@ -52,10 +52,12 @@ begin = """<?xml version="1.0" encoding="UTF-8"?>
 
 </configuration>
 -->
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">"""
-   # <vehicle id="133" depart="0">
-   #     <route edges="430188611#0 430188611#1 430188611#2 430188611#3 430188611#4 430188611#5 430188611#6 430188611#7 307176008#0 307176008#1 165994659#0 165994659#1 165994659#2 165994659#3 165994659#4 -165993754#2 -165993754#1 -165993754#0 165994528#9 165994528#10 165994528#11 165994528#12 165994528#13 165994072#6 165994072#7 165994072#8 165994291#10"/>
-   # </vehicle>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" vClass="passenger"/>
+    <vType id="motorcicle" vClass="motorcycle"/>
+    <vType id="bike" vClass="bicycle"/>
+    <vType id="bus" vClass="bus"/>
+    <vType id="truck" vClass="truck"/>"""
 end = "</routes>"
 
 #Load SUMO libs
@@ -94,6 +96,18 @@ class Simulation(Resource):
             
             timeToInsertVehicle = str(int(date_diff.total_seconds()))
 
+            if (route["meanOfTransport"] == "Bicicleta"):
+                vehicleType = "bike"
+            else if (route["meanOfTransport"] == "Ônibus"):
+                vehicleType = "bus"
+            else if (route["meanOfTransport"] == "Moto"):
+                vehicleType = "motorcicle"
+            else if (route["meanOfTransport"] == "Caminhão"):
+                vehicleType = "truck"
+            else:
+                vehicleType = "car"
+                
+
             if ("listOfLocation" in route):
                 verifyEdge = []
                 j = 0
@@ -112,7 +126,7 @@ class Simulation(Resource):
                             j = j+1
                             listOfEdges += " " + id
                 if (j >= 2):
-                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '"><route edges="'
+                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '" vClass="' + vehicleType + '"><route edges="'
                     vehicles += listOfEdges
                     vehicles += '"/></vehicle>\n'
 
