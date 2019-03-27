@@ -14,7 +14,7 @@ Esse repositório contem a API para a integração de dados responsáveis por ge
 |SQLAlchemy|pip install SQLAlchemy|https://pypi.org/project/SQLAlchemy/ |
 |pyproj|sudo apt-get install pyproj|https://packages.ubuntu.com/search?keywords=python-pyproj |
 |pyproj|pip install pyproj|https://pypi.org/project/pyproj/ |
-|lxml|https://pypi.org/project/lxml|https://pypi.org/project/lxml/ |
+|lxml|pip install lxml|https://pypi.org/project/lxml/ |
 |lxml|sudo apt-get install python-lxml|https://packages.ubuntu.com/search?keywords=python-lxml |
 
 ## Instalação
