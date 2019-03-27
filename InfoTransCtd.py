@@ -83,6 +83,9 @@ class Simulation(Resource):
 
         copyfile("map.net.xml",  path + "/map.net.xml")
         copyfile("map.poly.xml", path + "/map.poly.xml")
+        copyfile("dua.sumo.cfg", path + "/dua.sumo.cfg")
+        copyfile("map.sumo.cfg", path + "/map.sumo.cfg")
+        copyfile("script.sh", path + "/script.sh")
 
         radius = 10
 
@@ -136,6 +139,8 @@ class Simulation(Resource):
         file.write(xmltext + begin + vehicles + end) 
         
         file.close()
+
+        os.system('./' + path + '/script.sh')
 
         make_archive(path, 'zip', path)
 
