@@ -99,13 +99,13 @@ class Simulation(Resource):
             
             timeToInsertVehicle = str(int(date_diff.total_seconds()))
 
-            if (route["meansOfTransport"] == "Bicicleta"):
+            if (route["meanOfTransport"] == "Bicicleta"):
                 vehicleType = "bike"
-            if (route["meansOfTransport"] == "Ônibus"):
+            if (route["meanOfTransport"] == "Ônibus"):
                 vehicleType = "bus"
-            if (route["meansOfTransport"] == "Moto"):
+            if (route["meanOfTransport"] == "Moto"):
                 vehicleType = "motorcicle"
-            if (route["meansOfTransport"] == "Caminhão"):
+            if (route["meanOfTransport"] == "Caminhão"):
                 vehicleType = "truck"
             else:
                 vehicleType = "car"
@@ -124,12 +124,12 @@ class Simulation(Resource):
                         dist, closestEdge = distancesAndEdges[0]
                         xml=et.fromstring(str(closestEdge))
                         id = xml.attrib['id']
-                        if id not in verifyEdge and ("-" + id) not in verifyEdge:
+                        if id not in verifyEdge and ("-" + id) not in verifyEdge and (i-1) < len(route["listOfLocation"]):
                             verifyEdge.append(id)
                             j = j+1
                             listOfEdges += " " + id
                 if (j >= 2):
-                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '" vClass="' + vehicleType + '"><route edges="'
+                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '" type="' + vehicleType + '"><route edges="'
                     vehicles += listOfEdges
                     vehicles += '"/></vehicle>\n'
 
@@ -140,7 +140,12 @@ class Simulation(Resource):
         
         file.close()
 
-        os.system('./' + path + '/script.sh')
+        print("chmod -R 777 " + path.replace(' ', '\ '))
+        os.system("echo $USER")
+        os.system("chmod -R 777 " + path.replace(' ', '\ '))
+        os.system("ls -la " + path.replace(' ', '\ '))
+        os.system("chmod u+x " + path.replace(' ', '\ ') + '/script.sh')
+        os.system('./' + path.replace(' ', '\ ') + '/script.sh')
 
         make_archive(path, 'zip', path)
 
