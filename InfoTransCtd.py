@@ -85,10 +85,15 @@ class Simulation(Resource):
         radius = 10
 
         data = request.json["jsonList"]
-
+        date_first = datetime.datetime.strptime(data[0]["initDate"].replace('/', '-'), '%d-%m-%Y %H:%M:%S')
         i = 1
         vehicles = ""
         for route in data:
+            date_init = datetime.datetime.strptime(route["initDate"].replace('/', '-'), '%d-%m-%Y %H:%M:%S')
+            date_diff = date_init - date_first
+            
+            timeToInsertVehicle = str(int(date_diff.total_seconds()))
+
             if ("listOfLocation" in route):
                 verifyEdge = []
                 j = 0
@@ -107,7 +112,7 @@ class Simulation(Resource):
                             j = j+1
                             listOfEdges += " " + id
                 if (j >= 2):
-                    vehicles += '\n<vehicle id="' + str(i) + '" depart="0"><route edges="'
+                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '"><route edges="'
                     vehicles += listOfEdges
                     vehicles += '"/></vehicle>\n'
 
