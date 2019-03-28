@@ -18,6 +18,7 @@ from shutil import copyfile
 from shutil import make_archive
 import datetime
 import zipfile
+import time
 
 cwd = os.getcwd()
 
@@ -99,13 +100,13 @@ class Simulation(Resource):
             
             timeToInsertVehicle = str(int(date_diff.total_seconds()))
 
-            if (route["meanOfTransport"] == "Bicicleta"):
+            if (route["meansOfTransport"] == "Bicicleta"):
                 vehicleType = "bike"
-            if (route["meanOfTransport"] == "Ônibus"):
+            if (route["meansOfTransport"] == "Ônibus"):
                 vehicleType = "bus"
-            if (route["meanOfTransport"] == "Moto"):
+            if (route["meansOfTransport"] == "Moto"):
                 vehicleType = "motorcicle"
-            if (route["meanOfTransport"] == "Caminhão"):
+            if (route["meansOfTransport"] == "Caminhão"):
                 vehicleType = "truck"
             else:
                 vehicleType = "car"
@@ -134,18 +135,18 @@ class Simulation(Resource):
                     vehicles += '"/></vehicle>\n'
 
         file = open(path + "/map.rou.xml","w")
-
+        os.system("ls -la  " + path.replace(' ', '\ '))
         xmltext = ""
         file.write(xmltext + begin + vehicles + end) 
         
         file.close()
+        os.system("ls -la  " + path.replace(' ', '\ '))
+        time.sleep(240)
 
         print("chmod -R 777 " + path.replace(' ', '\ '))
-        os.system("echo $USER")
         os.system("chmod -R 777 " + path.replace(' ', '\ '))
-        os.system("ls -la " + path.replace(' ', '\ '))
-        os.system("chmod u+x " + path.replace(' ', '\ ') + '/script.sh')
-        os.system('./' + path.replace(' ', '\ ') + '/script.sh')
+        #os.system("chmod u+x " + path.replace(' ', '\ ') + '/script.sh')
+        os.system("./" + "sumoFiles/simulation-2019-03-28\ 00:01:54.690885" + "/script.sh")
 
         make_archive(path, 'zip', path)
 
