@@ -130,23 +130,24 @@ class Simulation(Resource):
                             j = j+1
                             listOfEdges += " " + id
                 if (j >= 2):
-                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" departSpeed="' + str(route["averageOfSpeed"]) + '" type="' + vehicleType + '"><route edges="'
+                    # '" departSpeed="' + str(route["averageOfSpeed"]) +
+                    print(timeToInsertVehicle)
+                    vehicles += '\n<vehicle id="' + str(i) + '" depart="' + timeToInsertVehicle + '" type="' + vehicleType + '"><route edges="'
                     vehicles += listOfEdges
                     vehicles += '"/></vehicle>\n'
 
         file = open(path + "/map.rou.xml","w")
-        os.system("ls -la  " + path.replace(' ', '\ '))
         xmltext = ""
         file.write(xmltext + begin + vehicles + end) 
         
         file.close()
-        os.system("ls -la  " + path.replace(' ', '\ '))
-        time.sleep(240)
 
-        print("chmod -R 777 " + path.replace(' ', '\ '))
         os.system("chmod -R 777 " + path.replace(' ', '\ '))
         #os.system("chmod u+x " + path.replace(' ', '\ ') + '/script.sh')
-        os.system("./" + "sumoFiles/simulation-2019-03-28\ 00:01:54.690885" + "/script.sh")
+        print("./" + path.replace(' ', '\ ') + "/script.sh")
+        os.system("./" + path.replace(' ', '\ ') + "/script.sh")
+
+        copyfile("map-final.rou.xml", path + "/map-final.rou.xml")
 
         make_archive(path, 'zip', path)
 
