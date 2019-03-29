@@ -136,7 +136,7 @@ class Simulation(Resource):
                     vehicles += listOfEdges
                     vehicles += '"/></vehicle>\n'
 
-        file = open(path + "/map.rou.xml","w")
+        file = open("map.rou.xml","w")
         xmltext = ""
         file.write(xmltext + begin + vehicles + end) 
         
