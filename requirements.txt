@@ -19,7 +19,6 @@ keyrings.alt==3.1
 lxml==4.2.5
 MarkupSafe==1.1.1
 pycrypto==2.6.1
-PyGObject==3.30.1
 pyproj==1.9.5.1
 pytz==2018.9
 pyxdg==0.25
