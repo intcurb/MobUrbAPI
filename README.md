@@ -8,6 +8,7 @@ Esse repositório contem a API para a integração de dados responsáveis por ge
 |Python 2.7|sudo apt-get install python2.7|https://www.python.org/downloads/ |
 |Pip|sudo apt-get install python-pip|https://pip.pypa.io/en/stable/installing/ |
 |Git|sudo apt-get install git|https://git-scm.com/downloads |
+|SUMO|sudo apt-get install sumo sumo-tools sumo-doc|https://sumo.dlr.de/wiki/Installing |
 |Flask|pip install flask|https://pypi.org/project/Flask/ |
 |Flask restful|pip install Flask-RESTful|https://pypi.org/project/Flask-RESTful/ |
 |Flask Jsonpify|pip install Flask-Jsonpify|https://pypi.org/project/Flask-Jsonpify/ |
@@ -20,6 +21,9 @@ Esse repositório contem a API para a integração de dados responsáveis por ge
 ## Instalação
 
  - Clonar o projeto com o comando: git clone https://github.com/intcurb/MobUrbAPI.git
+ 
+## SUMO
+ - A API do MobUrb utiliza recursos básicos das ferramentas do SUMO, apesar do projeto já incorporar a pasta de ferramentas, é recomendado que o colaborador tenha o sumo instalado em sua máquina.
 
 ## Utilização do sistema
  - Dentro da pasta do projeto (raiz), executar o seguinte comando para que a API inicie a execução: python InfoTransCtd.py
