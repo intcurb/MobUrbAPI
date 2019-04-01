@@ -100,13 +100,13 @@ class Simulation(Resource):
             
             timeToInsertVehicle = str(int(date_diff.total_seconds()))
 
-            if (route["meansOfTransport"] == "Bicicleta"):
+            if (str(route["meansOfTransport"]) == "Bicicleta"):
                 vehicleType = "bike"
-            if (route["meansOfTransport"] == "Ônibus"):
+            elif (str(route["meansOfTransport"]) == "Ônibus"):
                 vehicleType = "bus"
-            if (route["meansOfTransport"] == "Moto"):
+            elif (str(route["meansOfTransport"]) == "Moto"):
                 vehicleType = "motorcicle"
-            if (route["meansOfTransport"] == "Caminhão"):
+            elif (str(route["meansOfTransport"]) == "Caminhão"):
                 vehicleType = "truck"
             else:
                 vehicleType = "car"

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sun Mar 31 17:23:53 2019 by Eclipse SUMO duarouter Version 1.1.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="map.net.xml"/>
+        <additional-files value="map.poly.xml"/>
+        <route-files value="map.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="map-final.rou.xml"/>
+        <alternatives-output value="map-final.rou.alt.xml"/>
+    </output>
+
+    <processing>
+        <repair value="true"/>
+        <routing-algorithm value="dijkstra"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+    </time>
+
+    <report>
+        <verbose value="true"/>
+        <log value="dua.actuated.log"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bike" vClass="bicycle"/>
+    <vehicle id="61" type="bike" depart="0.00">
+        <route edges="326558693#1 430379408#3 430379408#4 430379408#0 430379408#1 430379408#2 326555065 326555059 430369396 430379403 -430379403 430379403 430369397#0 430369397#1 430369404 430369398#1 430369398#2 430369397#0 430369397#1 430369397#2 430369398#0 430369391 -430369389 430369389 -430369389 430369392#1 430369400#4 430369400#0 430369394"/>
+    </vehicle>
+</routes>

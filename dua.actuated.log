@@ -1,5 +1,13 @@
 Loading net... done.
 Loading additional file 'map.poly.xml' ... done.
-Error: File 'map.rou.xml' is not accessible (No such file or directory).
-Routes found between time steps 9223372036854776.00 and 9223372036854776.00.
-Quitting (on error).
+Skipped until: 0.00
+Edge '430379408#3' not connected to edge '326555059' for vehicle '61'.
+Edge '430369396' not connected to edge '-430379403' for vehicle '61'.
+Edge '-430379403' not connected to edge '430369398#2' for vehicle '61'.
+Edge '430369391' not connected to edge '430369389' for vehicle '61'.
+Edge '430369389' not connected to edge '430369392#1' for vehicle '61'.
+Edge '430369400#4' not connected to edge '430369394' for vehicle '61'.
+Warning: Repaired route of vehicle '61'.
+Routes found between time steps 0.00 and 0.00.
+DijkstraRouter answered 6 queries and explored 26.17 edges on average.
+DijkstraRouter spent 0ms answering queries (0.00ms on average).
